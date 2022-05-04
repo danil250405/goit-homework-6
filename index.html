@@ -63,6 +63,65 @@
                 <use href="./img/sprite.svg#icon-cross"></use>
               </svg>
             </button>
+            <div class="modal-container">
+              <h2 class="modal-title">
+                Оставьте свои данные, мы вам перезвоним
+              </h2>
+              <label class="label-modal">
+                <p class="label-modal-name">Имя</p>
+                <input type="text" name="name" class="input-modal" autofocus />
+                <svg
+                  class="icon-modal user-svg-modal"
+                  width="12px"
+                  height="12px"
+                >
+                  <use href="./img/sprite.svg#icon-user-modal"></use>
+                </svg>
+              </label>
+              <label class="label-modal">
+                <p class="label-modal-name">Телефон</p>
+                <input type="tel" name="tel" class="input-modal" />
+                <svg
+                  class="icon-modal tel-svg-modal"
+                  width="13px"
+                  height="13px"
+                >
+                  <use href="./img/sprite.svg#icon-phone-modal"></use>
+                </svg>
+              </label>
+              <label class="label-modal">
+                <p class="label-modal-name">Почта</p>
+                <input type="email" name="email" class="input-modal" />
+                <svg
+                  class="icon-modal envelope-svg-modal"
+                  width="15px"
+                  height="12px"
+                >
+                  <use href="./img/sprite.svg#icon-envelope-modal"></use>
+                </svg>
+              </label>
+              <label class="label-modal">
+                <p class="label-modal-name">Коментарий</p>
+                <textarea
+                  name="comment"
+                  class="textarea-comment"
+                  placeholder="Введите текст"
+                ></textarea>
+              </label>
+              <label class="conditions-modal">
+                <input type="checkbox" name="confirm" class="checkbox-modal" />
+                <svg class="icon-check-modal" width="16px" height="15px">
+                  <use href="./img/sprite.svg#icon-check"></use>
+                </svg>
+                <p class="text-conditions-modal">
+                  Соглашаюсь с рассылкой и принимаю &thinsp;
+                  <a href="" class="conditions-contract">Условия договора</a>
+                </p>
+              </label>
+              <label class="label-submit-button">
+                <input type="submit" class="submit-button" />
+              </label>
+            </div>
           </div>
         </div>
       </section>
@@ -408,7 +467,7 @@
           </address>
         </div>
         <div class="second-container-footer">
-          <p class="second-container-footer-title">присоединяйтесь</p>
+          <p class="container-footer-title">присоединяйтесь</p>
           <ul class="sochial-icon-list">
             <li class="sochial-icon-link sochial-icon-link-footer">
               <a href="https://www.instagram.com/">
@@ -439,6 +498,25 @@
               </a>
             </li>
           </ul>
+        </div>
+        <div class="third-container-footer">
+          <p class="container-footer-title">Подпишитесь на рассылку</p>
+          <label class="label-mail-footer">
+            <input
+              type="email"
+              name="mail"
+              placeholder=" "
+              class="input-mail-footer"
+              autocomplete="none"
+            />
+            <span class="mail-text-footer">E-mail</span>
+          </label>
+          <button class="subscribe-footer">
+            <span class="subscribe-text">Подписаться</span>
+            <svg class="icon-send-svg" width="24px" height="24px">
+              <use href="./img/sprite.svg#icon-send"></use>
+            </svg>
+          </button>
         </div>
       </div>
     </footer>

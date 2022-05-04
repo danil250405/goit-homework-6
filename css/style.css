@@ -98,13 +98,14 @@ select {
     --second-bgcolor: #E5E5E5;
     --third-bgcolor: #2F303A;
     --mail-tel-color: rgba(255, 255, 255, 0.6);
-    --accent-color: #2196F3;
+    --accent-color: #2196f3;
     --button-bgcolor: #F5F4FA;
     --icon-color: #AFB1B8;
     --bgcolor-icon-footer: rgba(255, 255, 255, 0.1);
     --backdrop-color: rgba(0, 0, 0, 0.2);
     --bgcolor-lessons-info: rgba(47, 48, 58, 0.8);
     --accent-bgcolor: rgba(33, 150, 243, 0.9);
+    --input-border-color: rgba(33, 33, 33, 0.2);
 }
 
 a {
@@ -310,7 +311,7 @@ main {
 
     display: block;
 }
-
+/* Modal */
 .backdrop {
     position: fixed;
     background-color: var(--backdrop-color);
@@ -325,7 +326,7 @@ main {
 .is-hidden {
     opacity: 0;
     pointer-events: none;
-    transition: opacity 250ms linear;
+    transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1);
     
 }
 .backdrop.is-hidden .modal-hero-btn{
@@ -350,7 +351,7 @@ main {
 
 .modal-close {
     display: flex;
-   
+    align-items: flex-end;
     cursor: pointer;
     width: 30px;
     height: 30px;
@@ -358,7 +359,7 @@ main {
     margin-right: 8px;
     margin-left: auto;
 
-
+    
     border: 1px solid rgba(0, 0, 0, 0.1);
     box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
         0px 1px 1px rgba(0, 0, 0, 0.14),
@@ -375,9 +376,163 @@ main {
     margin: auto;
 }
 .modal-close:hover, .modal-close:focus{
+ 
+    fill: var(--accent-color);
+
+}
+.modal-container{
+    padding: 2px 40px 40px 40px;
+}
+.modal-title{
+    font-weight: 700;
+    font-size: 20px;
+    margin-bottom: 2px;
+}
+.label-modal{
+   position: relative;
+}
+.label-modal-name{
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.17;
+    padding-bottom: 4px;
+    letter-spacing: 0.01em;
+
+    margin-top: 10px;
+
+    color: var(--Secondary-text-color);
+
+
+}
+.input-modal{
+    display: block;
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+    width: 100%;
+    height: 40px;
+    padding-left: 42px;
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ 
+}
+.input-modal:focus, .textarea-comment:focus{
+    outline: none;
+border: 1px solid var(--accent-color);
+}
+.input-modal:focus+.icon-modal{
+    fill: var(--accent-color);
+}
+.icon-modal{
+    position: absolute;
+    transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+        
+}
+.user-svg-modal{
+        top: 40px;
+        left: 13px;
+    
+}
+.tel-svg-modal{
+    top: 42px;
+    left: 14.2px;
+}
+.envelope-svg-modal{
+    left: 13.5px;
+    top: 41px;
+}
+.textarea-comment{
+    width: 100%;
+    height: 120px;
+    padding: 6px 15px;
+
+    resize: none;
+
+    border: 1px solid var(--input-border-color);
+    border-radius: 4px;
+
+    transition: border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.conditions-modal{
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+  
+}
+.text-conditions-modal{
+  
+        font-weight: 400;
+        font-size: 14px;
+        
+}
+.checkbox-modal{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    white-space: nowrap;
+    clip-path: inset(100%);
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+    
+}
+.icon-check-modal{
+    fill: var(--white);
+    background-color: var(--white);
+
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    border: 1px solid var(--primary-text-color);
+
+    margin-right: 8.4px;
+    transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    fill 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.checkbox-modal:checked + .icon-check-modal{
     background-color: var(--accent-color);
     fill: var(--white);
+    border: none;
+}
+.conditions-contract{
+    display: inline-block;
+    line-height: 0.8;
+    color: var(--accent-color);
+    border-bottom: 1px solid var(--accent-color);
 
+}
+.label-submit-button{
+    display: flex;
+    justify-content: center;
+
+    margin-top: 30px;
+
+
+}
+.submit-button{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 188%;
+
+    cursor: pointer;
+
+    padding: 10px 55px;
+
+    color: var(--white);
+    background-color: var(--accent-color);
+    
+    border: none;
+    border-radius: 4px;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12),
+    0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+}
+.submit-button:hover{
+    background-color: #188CE8;
 }
 /*Особенности  */
 .feature-list {
@@ -633,7 +788,7 @@ main {
     margin-left: 70px;
 }
 
-.second-container-footer-title {
+.container-footer-title {
     margin-bottom: 20px;
     font-size: 14px;
     font-weight: 700;
@@ -654,8 +809,71 @@ main {
 .sochial-icon-link-footer:not(:last-child) {
     margin-right: 10px;
 }
+.third-container-footer{
+    margin-left: 93px;
+}
+.label-mail-footer{ 
+    position: relative;
+}
+.input-mail-footer{
+  width: 358px;
+  height: 50px;
+  padding: 16px 15px;
+  background-color: var(--third-bgcolor);
+  outline: none;
+border: 1px solid rgba(255, 255, 255, 0.3);
+border-radius: 4px;
+color: var(--white);
+}
+.input-mail-footer:focus{
+    border: 1px solid var(--white);
+}
+.mail-text-footer{
+    position: absolute;
+    left: 16px;
+    top: -3px;
+    color: var(--mail-tel-color);
+    
+}
+.input-mail-footer:focus + .mail-text-footer, .input-mail-footer:not(:placeholder-shown) + .mail-text-footer{
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        margin: -1px;
+        border: 0;
+        padding: 0;
+        white-space: nowrap;
+        clip-path: inset(100%);
+        clip: rect(0 0 0 0);
+        overflow: hidden;
 
+}
+.subscribe-footer{
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 28px;
+    margin-left: 10px;
+    cursor: pointer;
 
+    background-color: var(--accent-color);
+    color: var(--white);
+    
+    border: none;
+    border-radius: 4px;
+
+}
+.subscribe-footer:hover{
+    background-color: #188CE8;
+}
+.subscribe-text{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 30px;
+}
+.icon-send-svg{
+    margin-left: 10px;
+    fill:var(--white);
+}
 /* main portfolio */
 /* Кнопки поиска */
 .list-search {
